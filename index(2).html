@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>یه سوال ❤️</title>
+
+<style>
+body{
+margin:0;height:100vh;display:flex;justify-content:center;align-items:center;
+font-family:Tahoma;background:linear-gradient(135deg,#ffd1e1,#fff);
+overflow:hidden;text-align:center
+}
+.box{
+background:#fff;padding:30px 20px;border-radius:25px;
+box-shadow:0 8px 30px #d88;z-index:2;width:85%;max-width:380px
+}
+h1{color:#d6336c;font-size:24px}
+button{
+border:0;border-radius:15px;padding:13px 25px;margin:8px;
+font-size:18px;font-family:inherit
+}
+#yes{background:#ff5c8a;color:white}
+#no{background:#eee}
+#dateBox{display:none}
+input{padding:10px;font-size:17px;border:2px solid #ff8fb1;border-radius:10px}
+.heart{position:fixed;bottom:-30px;font-size:25px;animation:up 5s linear forwards}
+@keyframes up{
+to{transform:translateY(-110vh);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<div id="question">
+<h1>یسنا خوشگله رو دوست داری؟❤️</h1>
+
+<button id="yes" onclick="yes()">بله 😍</button>
+<button id="no">نه 😐</button>
+</div>
+
+<div id="dateBox">
+<h1>آخ جوننن منم دوست دارررم 😭❤️</h1>
+
+
+<br>
+
+
+
+
+</div>
+
+<script>
+
+let no=document.getElementById("no");
+
+function move(){
+no.style.position="fixed";
+no.style.left=Math.random()*(innerWidth-no.offsetWidth)+"px";
+no.style.top=Math.random()*(innerHeight-no.offsetHeight)+"px";
+}
+
+no.onclick=move;
+no.ontouchstart=function(e){
+e.preventDefault();
+move();
+};
+
+function yes(){
+question.style.display="none";
+dateBox.style.display="block";
+}
+
+
+
+
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML=["❤️","💕","💗","💖","🥹","✨"][Math.floor(Math.random()*6)];
+h.style.left=Math.random()*100+"vw";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),5000);
+},500);
+
+</script>
+
+</body>
+</html>
